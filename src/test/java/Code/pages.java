@@ -8,7 +8,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 
 public class pages {
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	@SuppressWarnings("deprecation")
 	public void func1() throws InterruptedException {

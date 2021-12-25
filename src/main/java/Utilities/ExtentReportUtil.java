@@ -9,20 +9,17 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportUtil {
-	public ExtentReports extent;
-	ExtentSparkReporter spark;
+	public ExtentReports extent = new ExtentReports();
 	String strReportName = new SimpleDateFormat("ddmmyyyyss").format(new Date());
+	ExtentSparkReporter spark = new ExtentSparkReporter("C:\\Users\\SK\\eclipse-workspace\\JenkinsPipelineGitProject\\Reports\\Spark"+strReportName+".html");
+	
+	public static ExtentTest Testfeature;
+	public static ExtentTest Testscenario;
+	public static ExtentTest TestStep;
 
-public void CreateReport() {
-	extent = new ExtentReports();
-	spark = new ExtentSparkReporter("C:\\Users\\SK\\eclipse-workspace\\JenkinsPipelineGitProject\\Reports\\Spark"+strReportName+".html");
-	extent.createTest("MyFirstTest")
-	  .log(Status.PASS, "This is a logging event for MyFirstTest, and it passed!");
-	extent.attachReporter(spark);
-
-}
 
 public void CloseReport() {
+	extent.attachReporter(spark);
 	extent.flush();
 }
 
