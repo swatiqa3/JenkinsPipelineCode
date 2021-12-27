@@ -9,13 +9,14 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportUtil {
-	public ExtentReports extent = new ExtentReports();
+	public static ExtentReports extent = new ExtentReports();
 	String strReportName = new SimpleDateFormat("ddmmyyyyss").format(new Date());
 	ExtentSparkReporter spark = new ExtentSparkReporter("C:\\Users\\SK\\eclipse-workspace\\JenkinsPipelineGitProject\\Reports\\Spark"+strReportName+".html");
 	
 	public static ExtentTest Testfeature;
 	public static ExtentTest Testscenario;
 	public static ExtentTest TestStep;
+	public static String TestfeatureName;
 
 
 public void CloseReport() {
